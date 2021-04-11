@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Departamento de Imigração</h1>
+    Digite seu país de origem: <input type="text" name='txtpais' id='txtpais'>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id='txtnac'>
+
+    </div>
+    <script>
+        // Verifica a nacionalidade.
+        function verificar() {
+            var origem = window.document.querySelector('input#txtpais') // Passa a entrada da input para a variavel origem.
+            var nac = window.document.querySelector('div#txtnac') // Seleciona a area e joga na variavel nac.
+            var pais = (origem.value) // Pega o valor da variavel origem e passa para pais.
+            if (pais == 'Brasil' || pais == 'brasil') { // verifica sea entrada é brasil.
+                res.innerHTML = `<p>Você é Brasileiro!</p>` // Escreve na tela se a entrada for brasil.
+            } else {
+                res.innerHTML = `<p>Você é Estrangeiro!</p>` // Escreve na tela se for qualquer outra entrada.
+            }
+        }
+    </script>
+</body>
+</html>
