@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>React Básico</title>
+
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+    class App extends React.Component{
+        render(){
+
+            const socios = [
+                {
+                    id: 1,
+                    nome: "Joao",
+                    idade: 46
+                },
+                {
+                    id: 2,
+                    nome: "Ana",
+                    idade: 25
+                }
+            ]
+
+            const final = socios.map(socio => <MostrarSocio key={socio.id} socio={socio}/>)
+
+            return(
+                <div>
+                    {final}
+                </div>
+            )
+        }
+    }
+
+    class MostrarSocio extends React.Component{
+        constructor(props){
+            super(props)
+        }
+        render(){
+            return(
+                <div>
+                    <p>id: {this.props.socio.id}</p>
+                    <p>Nome: {this.props.socio.nome}</p>
+                    <p>Idade: {this.props.socio.idade}</p>
+                </div>
+            )
+        }
+    }
+
+    //----------------------------------------------------
+    ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+    )
+        
+    </script>
+</body>
+</html>
